@@ -479,7 +479,7 @@ char *szEdges[] = {"falling\n","rising\n","both\n","none\n"};
 //
 void *GPIOThread(void *param)
 {
-int iPin = (int)param; // pin number is passed in
+int iPin = (intptr_t)param; // pin number is passed in
 struct pollfd fdset[1];
 char szName[32], szTemp[64];
 int gpio_fd;
@@ -539,7 +539,7 @@ pthread_t tinfo;
 		return 0;
 	cbList[iPin] = callback; // save the callback pointer
 	// Start a thread to manage the interrupt/callback
-	pthread_create(&tinfo, NULL, GPIOThread, (void *)iPin);
+	pthread_create(&tinfo, NULL, GPIOThread, (void *)(intptr_t)iPin);
 	return 1;
 } /* AIOAddGPIOCallback() */
 
@@ -572,7 +572,7 @@ long getTimeInMicroseconds()
 //
 void *GPIOIRThread(void *param)
 {
-int iPin = (int)param; // pin number is passed in
+int iPin = (intptr_t)param; // pin number is passed in
 int endOfCodeTimeOut = 3; // after 3 ms we think code has ended.
 struct pollfd fdset[1];
 char szName[32], szTemp[64];
@@ -653,7 +653,7 @@ pthread_t tinfo;
 		return 0;
 	cbIRList[iPin] = callback; // save the callback pointer
 	// Start a thread to manage the interrupt/callback
-	pthread_create(&tinfo, NULL, GPIOIRThread, (void *)iPin);
+	pthread_create(&tinfo, NULL, GPIOIRThread, (void *)(intptr_t)iPin);
 	return 1;
 } /* AIOAddGPIOCallback() */
 
