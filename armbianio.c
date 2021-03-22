@@ -102,6 +102,13 @@ static int iOPIZPins[] = {-1,-1,-1,12,-1,11,-1,6,198,-1,
 			199,1,7,0,-1,3,19,-1,18,15,
 			-1,16,2,14,13,-1,10,-1,5,4}; // last 3 pins are TTY header
 
+// Orange Pi Zero 2
+static int iOPIZ2Pins[] = {-1,-1,-1,229,-1,228,-1,73,
+			   226,-1,227,1,75,69,-1,72,79,
+			   -1,78,231,-1,232,71,230,233,
+			   -1,74,65,272,262};
+
+
 // NanoPi Duo
 static int iNPDPins[] = {355,5,-1,4,-1,-1,-1,11,-1,12,
 			363,13,203,14,-1,16,-1,15,-1,199,
@@ -142,10 +149,10 @@ static int iTinkerPins[] = {-1,-1,-1,252,-1,253,-1,17,161,-1,
 			-1,168,239,238,-1,185,223,224,187,-1,
 			188};
 
-static int *iPinLists[] = {ipotatoPins, iBPIZPins, iRPIPins, iOPIZPPins, iOPIZP2ins, iOPIZPins, iOPI1Pins, iOPI1Pins, iNPDPins, iNP2Pins, iNPK2Pins, iNPNPins, iNPNPins, iNPNPins, iNPM4Pins, iTinkerPins};
-static const char *szBoardNames[] = {"Le potato\n","Banana Pi M2 Zero\n","Raspberry Pi","Orange Pi Zero Plus\n","Orange Pi Zero Plus 2\n","Orange Pi Zero\n","Orange Pi Lite\n","Orange Pi One\n","NanoPi Duo\n", "NanoPi 2\n", "Nanopi K2\n", "NanoPi Neo\n", "NanoPi Air\n", "NanoPi Neo 2\n", "NanoPi M4\n", "Tinkerboard\n",NULL};
+static int *iPinLists[] = {ipotatoPins, iBPIZPins, iRPIPins, iOPIZPPins, iOPIZP2ins, iOPIZPins,iOPIZ2Pins, iOPI1Pins, iOPI1Pins, iNPDPins, iNP2Pins, iNPK2Pins, iNPNPins, iNPNPins, iNPNPins, iNPM4Pins, iTinkerPins};
+static const char *szBoardNames[] = {"Le potato\n","Banana Pi M2 Zero\n","Raspberry Pi","Orange Pi Zero Plus\n","Orange Pi Zero Plus 2\n","Orange Pi Zero\n","Orange Pi Zero 2\n","Orange Pi Lite\n","Orange Pi One\n","NanoPi Duo\n", "NanoPi 2\n", "Nanopi K2\n", "NanoPi Neo\n", "NanoPi Air\n", "NanoPi Neo 2\n", "NanoPi M4\n", "Tinkerboard\n",NULL};
 static int iBoardType;
-static int iPinCount[] = {40,40,40,29,29,29,43,43,32,40,40,40,40,40,41,41}; // number of pins in the header
+static int iPinCount[] = {40,40,40,29,29,29,30,43,43,32,40,40,40,40,40,41,41}; // number of pins in the header
 // GPIO number of on-board IR receiver
 static int iIR_GPIO[] = {7, 0, 0, 363, 363, 363, 363, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
